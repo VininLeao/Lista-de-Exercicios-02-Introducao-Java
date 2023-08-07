@@ -5,15 +5,13 @@ public class Ex08 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Digite uma palavra:");
-        String palavra = scanner.nextLine();
+        String palavra = scanner.nextLine().replaceAll(" ", "");
         String palavraContrario = new StringBuilder(palavra.toLowerCase()).reverse().toString();
 
-        if (palavra.toLowerCase().equals(palavraContrario)) {
-            System.out.println("A palavra " + palavra + " ao contrário se lê da mesma forma");
+        if (palavra.equalsIgnoreCase(palavraContrario)) {
+            System.out.println("A palavra " + palavra + " pode ser lida da mesma forma da esquerda para a direita e vice-versa.");
         } else {
-            System.out.println("A palavra " + palavra + " ao contrário não se lê da mesma forma");
+            System.out.println("A palavra " + palavra + " não pode ser lida da mesma forma da esquerda para a direita e vice-versa.");
         }
-
-
     }
 }
